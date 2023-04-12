@@ -1,8 +1,0 @@
-import os
-def list_dir():
-    path=input("enter the path:")
-    contents=os.listdir(path)
-    for item in contents:
-        print(item)
-
-list_dir()
