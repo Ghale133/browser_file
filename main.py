@@ -18,6 +18,7 @@ def main():
         print("13. hide folder:")
         print("q . Quit")
 
+
         choice=input("Enter your choice: ")
         if choice=="1":
             obj.list_directory()
