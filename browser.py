@@ -14,7 +14,7 @@ class File_handling:
         contents=os.listdir(directory_path)
         for item in contents:
             print(item)
-            print("hello world")
+            
 
     
 
