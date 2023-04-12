@@ -5,10 +5,11 @@ import string
 
 class File_handling:
     '''
-    This module defines a FileBrowser class that provides functionalities to perform file operations. 
+    This module defines a FileBrowser class that provides functionalities 
+    to perform file operations. 
     Attributes:
-        current_path (str): the current path where the FileBrowser object is located.
-        show_hidden (bool): a boolean flag to determine whether to show hidden files/folders or not.
+    current_path (str): the current path where the FileBrowser object is located.
+    show_hidden (bool): a boolean flag to determine whether to show hidden files/folders or not.
     Methods:
         list_contents: displays a list of files and folders in the directory.
         rename_folder: renames a folder in the given directory.
