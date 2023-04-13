@@ -23,13 +23,21 @@ def main():
         if choice=="1":
             obj.list_directory()
         elif choice=="2":
-            obj.rename_directory(input("enter the old folder name:"),input("enter the newfolder name:"))
+            obj.oldfolder = input("enter the old folder name:")
+            obj.newfolder = input("enter the newfolder name:")
+            obj.rename_directory()
         elif choice=="3":
-            obj.rename_file(input("enter the old file name:"),input("enter the new file name:"))
+            obj.oldname = input("enter the old file name:")
+            obj.newname = input("enter the new file name:")
+            obj.rename_file()
         elif choice=="4":
-            obj.copy_files(input("enter the source location with name:"),input("enter the destination location:"))
+            obj.source=input("enter the source location with name:")
+            obj.destination=input("enter the destination location with name:")
+            obj.copy_files()
         elif choice=="5":
-            obj.copy_folder(input("enter the source location with name:"),input("enter the destination location:"))
+            obj.source=input("enter the source location with name:")
+            obj.destination=input("enter the destination location with name:")
+            obj.copy_folder()
         elif choice=="6":
             obj.empty_file()
         elif choice=="7":
@@ -37,15 +45,22 @@ def main():
         elif choice=="8":
             obj.view_file()
         elif choice=="9":
-            obj.move_folder(input("enter the souce folder:"),input("enter the destination location:"))
+            obj.source=input("enter the souce folder:")
+            obj.destination=input("enter the destination folder:")
+            obj.move_folder()
         elif choice=="10":
-            obj.move_file(input("enter the filename to move:"),input("enter the destination location:"))
+            obj.source=input("enter the filename to move:")
+            obj.destination=input("enter the destination location to move:")
+            obj.move_file()
         elif choice=="11":
             obj.delete_file()
         elif choice=="12":
             obj.delete_folder()
         elif choice=="13":
-            obj.hide_folder(input("enter the folder path"),input("enter the folder name:"))
+            obj.path=input("enter the folder path")
+            obj.foldername=input("enter the folder name:")
+            obj.hide_folder()
+            
         elif choice=="q":
             break
             

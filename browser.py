@@ -28,15 +28,6 @@ class File_handling:
     object= FileBrowser()
     object.list_contents()
     '''
-    def __init__(self):
-        '''
-        __init__ is a constructor used to initialize an object's state.
-        self represents class's instance and is required to access any variable and method within the class.
-        '''
-        pass
-
-
-#list directory contents
     def list_directory(self):
         '''
         list the contents of the given directory
@@ -47,60 +38,42 @@ class File_handling:
         for item in contents:
             print(item)
             
-#rename folder
-    def rename_directory(self, oldfolder, newfolder):
+    def rename_directory(self):
         '''
         rename the directory name  using os.rename() method.
         the method prompts to user to enter the old folder name and new folder name to be renamed
         then os.rename()method rename the folder name as the user desire.
         '''
-        self.oldfolder = oldfolder
-        self.newfolder = newfolder
         current_path=input("enter the current path:")
-        os.rename( current_path+oldfolder,current_path+newfolder)
+        os.rename( current_path+self.oldfolder,current_path+self.newfolder)
     
-#rename file
-    def rename_file(self,oldname, newname):
+    def rename_file(self):
         '''
         rename the file name  using os.rename() method.
         the method prompts to user to enter the old file name and new new name to be renamed
         then os.rename()method rename the folder name as the user desire.
         '''
-        self.oldname = oldname
-        self.newname = newname
         current_path=input("enter the current_path")
-        os.rename(current_path+oldname,current_path+newname)
+        os.rename(current_path+self.oldname,current_path+self.newname)
 
-#copy file
-    def copy_files(self,source,destination):
+
+    def copy_files(self):
         '''
         copy the file from the given directory to a specified folder.
         the method prompts to user to enter the source file name and destination location to be copied
         then shutil.copyfile()method copy the file or folder to the specified location.
         '''
-        self.source=source
-        self.destination=destination
-        shutil.copyfile(source,destination)
-        self.source= source
-        self.destination=destination
-        shutil.copyfile(source,destination)
+        shutil.copyfile(self.source,self.destination)
 
     
-
-#copy folder
-    def copy_folder(self,source,destination):
+    def copy_folder(self):
         '''
         copy the folder from the given directory to a specified location.
         the method prompts to user to enter the source folder name and destination location to be copied
         then shutil.copytree()method copy the folder to the specified location.
         '''
-        self.source=source
-        self.destination=destination
-        shutil.copytree(source,destination)
+        shutil.copytree(self.source,self.destination)
 
-    
-
-#create empty file
     def empty_file(self):
         '''
         creates an empty file with the given name in the current directory.
@@ -111,7 +84,6 @@ class File_handling:
             pass
         print("file is created")
 
-#create file from random text
     def random_text_file(self):
         '''
          Create a new file with random text of a specified length in the current directory.
@@ -130,7 +102,7 @@ class File_handling:
         except FileNotFoundError:
             print("Directory not found")
 
-#view contents of a file
+
     def view_file(self):
         '''
         displays the content of the given file in the current directory
@@ -139,29 +111,22 @@ class File_handling:
             content=f.read()
             print(content)
 
-#move folder
-    def move_folder(self,source, destination):
+    def move_folder(self):
         '''
         move the folder from the source directory to a specified location.
         the method prompts to user to enter the source folder name and destination location to be moved
         then shutil.move()method move the folder to the specified location.
         '''
-        self.source=source
-        self.destination=destination
-        shutil.move(source, destination)
+        shutil.move(self.source, self.destination)
 
-#move file
-    def move_file(self,source_path, destination_path):
+    def move_file(self):
         '''
         move the file from the source directory to a specified location.
         the method prompts to user to enter the source file name and destination location to be moved
         then os.rename()method move the file to the specified location.
         '''
-        self.source=source_path
-        self.destination=destination_path
-        os.rename(source_path, destination_path)
+        os.rename(self.source,self.destination)
  
-#delete file
     def delete_file(self):
         '''
         delete the file from the current location.
@@ -171,7 +136,6 @@ class File_handling:
         file=input("enter the file to delete:")
         os.remove(file)
     
-#delete folder
     def delete_folder(self):
         '''
         delete the folder from the current location.
@@ -181,16 +145,14 @@ class File_handling:
         foldername=input("enter the path")
         os.rmdir(foldername)
     
-#hide a folder
-    def hide_folder(self,path,foldername):
+    def hide_folder(self):
         '''
         hide the folder from the current location by renaming it with putting '.'at infront of folder name.
         prompts to user to enter the folder name and its location to be hide and then
         os.rename() method hides the folder.
         '''
-        self.path=path
-        self.foldername=foldername
-        pathfolder=os.path.join(path,foldername)
-        os.rename(pathfolder,os.path.join(path,"."+foldername))
+        
+        pathfolder=os.path.join(self.path,self.foldername)
+        os.rename(pathfolder,os.path.join(self.path,"."+self.foldername))
     
 
